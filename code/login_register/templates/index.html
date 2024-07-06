@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}中传放心传-首页{% endblock %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+
+{% if user %}
+<h1>Hello, {{ user.username }}!</h1>
+<!-- 用户登录状态需要实现的功能 -->
+{% else %}
+<center>
+    <div class="login-content">
+        <div class="login-content_wrapper">
+            <div class="bd-login-content_title">中传放心传</div>
+            <div class="bd-login-content_title">记录每一份热爱</div>
+        </div>
+    
+        <div class="login-content_wrapper">
+            <div class="bd-login-content__subtitle">为你电脑/手机中的文件提供云备份、预览、分享等服务，帮你更便捷安全地管理数据</div>
+        </div>
+        
+        <div class="login-button login-content_login">
+            <a href="{{ url_for('auth.login') }}">
+                <button>去登录</button>
+            </a>
+        </div>
+    </div>
+</center>
+{% endif %}
+{% endblock %}
